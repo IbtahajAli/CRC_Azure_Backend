@@ -34,7 +34,7 @@ jobs:
         pytest
 
     - name: Azure Login
-      uses: azure/login@v1A
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
