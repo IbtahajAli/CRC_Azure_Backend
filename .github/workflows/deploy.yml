@@ -40,4 +40,4 @@ jobs:
 
     - name: Deploy ARM Template
       run: |
-        az deployment group create --resource-group ClassIbtahaj --template-file templates/merged-template.json --parameters templates/merged-parameters.json
+        az deployment group create --resource-group RsrceIbtahaj --template-file templates/merged-template.json --parameters templates/merged-parameters.json
