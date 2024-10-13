@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11'
+        python-version: '3.11'  # Specify Python 3.11
 
     - name: Install dependencies
       run: |
@@ -34,7 +34,8 @@ jobs:
         pytest
 
     - name: Azure Login
-      uses: azure/login@v1
+      uses: azure/login@v1  # Correct version
+
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
