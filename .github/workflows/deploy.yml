@@ -15,8 +15,10 @@ jobs:
 
       - name: Set up Python 3.11
         run: |
+          python3.11 -m ensurepip
           python3.11 -m pip install --upgrade pip
           python3.11 -m pip install -r MyFunction/requirements.txt
+      
 
       - name: Set environment variables
         run: |
