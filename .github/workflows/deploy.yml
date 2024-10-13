@@ -17,7 +17,7 @@ jobs:
         run: |
           python3.11 -m ensurepip
           python3.11 -m pip install --upgrade pip
-          python3.11 -m pip install -r MyFunction/requirements.txt
+          python3.11 -m pip install -r az_function/requirements.txt
       
 
       - name: Set environment variables
