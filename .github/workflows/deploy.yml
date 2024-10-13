@@ -14,9 +14,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Python
-      uses: actions/setup-python@v4  # Updated to v4
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.11'  # Use Python 3.11
+        python-version: '3.11.4'  # Use specific version available in manifest
 
     - name: Install dependencies
       run: |
@@ -35,7 +35,6 @@ jobs:
 
     - name: Azure Login
       uses: azure/login@v1
-
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
