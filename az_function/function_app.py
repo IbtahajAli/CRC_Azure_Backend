@@ -1,10 +1,13 @@
 import azure.functions as func
 import logging
 from azure.cosmos import CosmosClient, exceptions
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 # Initialize the Cosmos client
-cosmos_endpoint = "https://ibtahajdb.documents.azure.com:443/"
-cosmos_key = "5DtRMCR8U0dy0QJbekmvyd9veNa0UqI3GrjYYAGdq6GmGYX1N6O8eCU73TgWFKKpaw5fr4tsYyuNACDbbvgZZw=="
+cosmos_endpoint = os.environ.get("COSMOS_ENDPOINT")
+cosmos_key = os.environ.get("COSMOS_KEY")
 database_name = "ibtahajdb" 
 container_name = "counter" 
 
