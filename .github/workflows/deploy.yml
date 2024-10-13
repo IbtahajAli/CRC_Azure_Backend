@@ -13,20 +13,25 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Use pre-installed Python
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
       run: |
-        python3.11 -m pip install --upgrade pip
-        python3.11 -m pip install -r MyFunction/requirements.txt
+        python -m pip install --upgrade pip
+        pip install -r MyFunction/requirements.txt
 
     - name: Set environment variables
       run: |
-        echo "COSMOS_DB_ENDPOINT=${{ secrets.COSMOS_ENDPOINT }}" >> $GITHUB_ENV
-        echo "COSMOS_DB_KEY=${{ secrets.COSMOS_KEY }}" >> $GITHUB_ENV
+        echo "COSMOS_DB_ENDPOINT=${{ secrets.COSMOS_DB_ENDPOINT }}" >> $GITHUB_ENV
+        echo "COSMOS_DB_KEY=${{ secrets.COSMOS_DB_KEY }}" >> $GITHUB_ENV
 
     - name: Run tests
       run: |
-        cd az_function
-        python3.11 -m pytest
+        cd MyFunction
+        pytest
 
     - name: Azure Login
       uses: azure/login@v1
