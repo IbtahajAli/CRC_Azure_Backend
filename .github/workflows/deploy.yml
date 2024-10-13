@@ -20,8 +20,8 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "COSMOS_DB_ENDPOINT=${{ secrets.COSMOS_ENDPOINT }}" >> $GITHUB_ENV
-          echo "COSMOS_DB_KEY=${{ secrets.COSMOS_KEY }}" >> $GITHUB_ENV
+          echo "COSMOS_ENDPOINT=${{ secrets.COSMOS_ENDPOINT }}" >> $GITHUB_ENV
+          echo "COSMOS_KEY=${{ secrets.COSMOS_KEY }}" >> $GITHUB_ENV
 
       - name: Run tests
         run: |
